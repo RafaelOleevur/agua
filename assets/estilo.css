@@ -1,0 +1,138 @@
+
+
+ /*  aplicando configurações do CSS GRID no body */
+
+ html,body{
+    box-sizing: border-box;
+            /* dentro da box, já está incluso padding e border */
+    margin: 0px;
+    padding: 0px;
+    
+ }
+
+#caixa{     
+    height: 100vh;
+            /*importante -- aqui defino que a caixa será "100%" do viewport*/
+    display:grid;
+    font-family: "Choko", sans-serif;
+    grid-template-columns: 6fr 1fr;
+            /* o height 100vh é importante para que essas parâmetros aqui se enquadrem
+                na medida de 100vh */
+    grid-template-rows: 3fr 15fr 35px;
+    grid-template-areas: "cabecalho navegacao"
+                        "conteudo conteudo"
+                        "rodape rodape";
+}
+
+/* fonte customizada */ 
+@font-face {
+    font-family: "Choko";
+    src: url('fonte/Choko.woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* cabeçalho */
+header{
+    grid-area: cabecalho;
+    background-color: #647DFF;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+      
+}
+
+#titulo-site, #descricao{
+    margin: 0px;
+    padding: 10px;
+    
+}
+
+/* navegação-menu */
+nav{
+    grid-area: navegacao;
+    background-color: #647DFF;
+    opacity: 0.7;
+    font-size: 1rem;
+    margin: 0px; 
+           
+}
+
+#menu{
+    list-style: none;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    margin-right: 30px;    
+        
+}
+
+nav > ul > li{
+    margin: 10px;
+    display: block;
+}
+
+nav > ul > li > a:hover{
+    color: white;
+   
+}
+
+nav > ul > li > a{
+    text-decoration: none;
+    color: blue;
+}
+
+
+/* conteudo principal */
+main{
+    grid-area: conteudo;
+    background: white url("img/agua2.jpg") no-repeat center center;
+    font-size: 1.8rem;   
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+input,select{
+    margin: 10px;
+    padding: 5px;
+    font-size: 1.4rem;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.botao-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+.botao{
+    background-color: white;
+    color: black;
+    font-size: 1.4rem;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin: auto;
+    
+}
+
+
+/* rodape */
+footer{
+    grid-area: rodape;
+    background-color: #647DFF;
+    font-size: 1rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
